@@ -31,6 +31,9 @@ class Signer:
         )
         return f"{'private' if self.private_key is not None else 'public'}\n {pem.decode()}"
 
+    def can_sign(self) -> bool:
+        return self.private_key is not None
+
     def sign(self, file: "io.BufferedReader | str | os.PathLike[str]") -> bytes:
         if self.private_key is None:
             msg = "no private key found"
@@ -113,7 +116,7 @@ class Signer:
             raise ValueError(msg) from e
 
     @classmethod
-    def from_file(cls, key_file: "io.BufferedReader | str | os.PathLike[str]", password: str) -> "Self":
+    def from_file(cls, key_file: "io.BufferedReader | str | os.PathLike[str]", password: bytes) -> "Self":
         try:
             if isinstance(key_file, str) or isinstance(key_file, os.PathLike):
                 content = Path(key_file).read_bytes()
