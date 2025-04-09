@@ -79,7 +79,7 @@ def _verify():
 
 def gui():
     dpg.create_context()
-    dpg.create_viewport(title='Custom Title', width=600, height=300)
+    dpg.create_viewport(title='PDF Signer', width=600, height=300)
 
     with dpg.window(label="Example Window", tag="Primary Window"):
         with dpg.group(tag="private_key"):

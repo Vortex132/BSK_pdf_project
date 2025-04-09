@@ -15,8 +15,8 @@ SALT_LENGTH = 16
 AES_KEY_LENGTH = 32
 ITERATIONS = 100000
 HASH_ALGORITHM = hashes.SHA256()
-PRIVATE_KEY_FILENAME = "klucz_prywatny.enc"
-PUBLIC_KEY_FILENAME = "klucz_publiczny.pem"
+PRIVATE_KEY_FILENAME = "klucz_prywatny.key"
+PUBLIC_KEY_FILENAME = "klucz_publiczny.key.pub"
 
 class RSAKeys:
     
