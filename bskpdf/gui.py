@@ -5,6 +5,11 @@ from bskpdf.crypto import Signer
 signer = None
 
 def _load_private_key():
+    """
+    Load a private key from a pendrive selected in a Browse modal, by clicking the 'Load' button. 
+    The file must be encrypted with a password.
+    The password is passed as a string to a text field.
+    """
     global signer
     path = dpg.get_value("private_key_input")
     password: str = dpg.get_value("private_key_pass")
@@ -22,6 +27,9 @@ def _load_private_key():
         dpg.set_value("private_state", "Failed")
 
 def _clear_private_key():
+    """
+    Clear the selected private key, by pressing the 'Clear' button.
+    """
     global signer
     signer = None
     dpg.enable_item("public_key")
@@ -30,6 +38,10 @@ def _clear_private_key():
     dpg.set_value("private_state", "")
 
 def _load_public_key():
+    """
+    Load a public key from a file selected in the Browse modal, by clicking the 'Load' button. 
+    The public key is used to verify the authenticity of signature.
+    """
     global signer
     path = dpg.get_value("public_key_input")
     dpg.set_value("public_state", "")
@@ -45,6 +57,9 @@ def _load_public_key():
         dpg.set_value("public_state", "Failed")
 
 def _clear_public_key():
+    """
+    Clear the already selected public key, by pressing the 'Clear' button.
+    """
     global signer
     signer = None
     dpg.enable_item("private_key")
@@ -53,6 +68,11 @@ def _clear_public_key():
     dpg.set_value("public_state", "")
 
 def _generate_keygen():
+    """
+    Generate a new public and private keys, by clicking the 'Generate' button and save them in a dedicated location chosen in Browse modal. 
+    The private key is encrypted with a password, that is entered in a dedicated text field.
+    The public key is saved in the same location as the private key, with a .pub extension.
+    """
     signer = Signer.generate()
     path = dpg.get_value("keygen_input")
     password: str = dpg.get_value("keygen_pass")
@@ -64,11 +84,19 @@ def _generate_keygen():
         print(e)
 
 def _sign():
+    """
+    Sign a PDF document with the selected private key in Browse modal. The PDF document is passed as a string.
+    The private key is used to sign the document, by clicking a 'Sign' button.
+    """
     dpg.set_value("pdf_state", "")
     signer.easy_sign(dpg.get_value("pdf_input"))
     dpg.set_value("pdf_state", "Signed")
 
 def _verify():
+    """
+    Verify the signature of a PDF document with the selected public key in Browse modal. The PDF document is passed as a string.
+    The public key is used to verify the signature, by clicking a 'Verify' button.
+    """
     dpg.set_value("pdf_state", "")
     verified = signer.easy_verify(dpg.get_value("pdf_input"))
     if verified:
@@ -79,7 +107,7 @@ def _verify():
 
 def gui():
     dpg.create_context()
-    dpg.create_viewport(title='PDF Signer', width=600, height=300)
+    dpg.create_viewport(title='PDF Signer', width=800, height=500)
 
     with dpg.window(label="Example Window", tag="Primary Window"):
         with dpg.group(tag="private_key"):
