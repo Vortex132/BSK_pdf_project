@@ -1,8 +1,35 @@
 import dearpygui.dearpygui as dpg
 
 from bskpdf.crypto import Signer
+from bskpdf.pendrive import Pendrive
 
 signer = None
+
+pendrive = Pendrive("/mnt/pendrive/p.key")
+
+def _pendrive_attach(path):
+    """
+    Handle the pendrive attachment event.
+    Sets the value of the 'private_key_input' field to the pendrive path.
+    Also attempts to load the private key.
+    """
+    dpg.set_value("private_key_input", path)
+    _load_private_key()
+
+def _pendrive_detach(path):
+    """
+    Handle the pendrive detachment event.
+    Clears the 'private_key_input' field if it matches the detached path.
+    Also clears the loaded private key.
+    """
+    if path == dpg.get_value("private_key_input"):
+        dpg.set_value("private_key_input", "")
+        _clear_private_key()
+
+pendrive.attach = _pendrive_attach
+pendrive.detach = _pendrive_detach
+
+pendrive.run()
 
 def _load_private_key():
     """
