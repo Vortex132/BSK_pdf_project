@@ -59,8 +59,6 @@ The class also allows to generate new keys and save them.
 \end{DoxyVerb}
  
 
-\label{doc-constructors}
-\Hypertarget{classcrypto_1_1_signer_doc-constructors}
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{classcrypto_1_1_signer_ae2082df51c64868c37edd8925acdb469}\index{crypto.Signer@{crypto.Signer}!\_\_init\_\_@{\_\_init\_\_}}
 \index{\_\_init\_\_@{\_\_init\_\_}!crypto.Signer@{crypto.Signer}}
@@ -77,8 +75,6 @@ If only a public key is provided, it is used as is.
 \end{DoxyVerb}
  
 
-\label{doc-func-members}
-\Hypertarget{classcrypto_1_1_signer_doc-func-members}
 \doxysubsection{Member Function Documentation}
 \Hypertarget{classcrypto_1_1_signer_a1135fc3a175a5287d9bc81bd3b82650c}\index{crypto.Signer@{crypto.Signer}!\_\_str\_\_@{\_\_str\_\_}}
 \index{\_\_str\_\_@{\_\_str\_\_}!crypto.Signer@{crypto.Signer}}
@@ -95,12 +91,12 @@ Returns the public key in PEM format.
 {\footnotesize\ttfamily \label{classcrypto_1_1_signer_aed2133e6a68fd95a0a835e9f4acc84ef} 
 crypto.\+Signer.\+\_\+decrypt (\begin{DoxyParamCaption}\item[{}]{cls}{, }\item[{bytes}]{cipher\+\_\+text}{, }\item[{bytes}]{password}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
-\begin{DoxyVerb}Decrypt the given cipher text using AES256 dencryption in CBC mode.
+\begin{DoxyVerb}Decrypt the given cipher text using AES256 decryption in CBC mode.
 The key is derived from the password using PBKDF2 KDF.
 The salt and iv is transformed from the cipher text.
 
 :param cipher_text: The text to decrypt.
-:param password: The password to use for dencryption.
+:param password: The password to use for decryption.
 :return: The decrypted text.
 \end{DoxyVerb}
  \Hypertarget{classcrypto_1_1_signer_a18b542b403aadaeeb0877793526cef24}\index{crypto.Signer@{crypto.Signer}!\_encrypt@{\_encrypt}}
@@ -195,7 +191,7 @@ The signature is read from a file with the same name as the original file.
  "{}Self"{} crypto.\+Signer.\+from\+\_\+file (\begin{DoxyParamCaption}\item[{}]{cls}{, }\item[{"{}io.\+Buffered\+Reader \texorpdfstring{$\vert$}{|} str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]}"{}}]{key\+\_\+file}{, }\item[{bytes}]{password}{}\end{DoxyParamCaption})}
 
 \begin{DoxyVerb}Deserialize the private key from a given file.
-The private key is decrypted using a password.
+The private key content is decrypted using a password.
 The file is read in PEM format.
 
 :param key_file: The path to the file to read the private key.
