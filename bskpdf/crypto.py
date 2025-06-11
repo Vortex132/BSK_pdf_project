@@ -177,7 +177,7 @@ class Signer:
     def from_file(cls, key_file: "io.BufferedReader | str | os.PathLike[str]", password: bytes) -> "Self":
         """
         Deserialize the private key from a given file.
-        The private key is decrypted using a password.
+        The private key content is decrypted using a password.
         The file is read in PEM format.
 
         :param key_file: The path to the file to read the private key.
@@ -306,12 +306,12 @@ class Signer:
     @classmethod
     def _decrypt(cls, cipher_text: bytes, password: bytes):
         """
-        Decrypt the given cipher text using AES256 dencryption in CBC mode.
+        Decrypt the given cipher text using AES256 decryption in CBC mode.
         The key is derived from the password using PBKDF2 KDF.
         The salt and iv is transformed from the cipher text.
 
         :param cipher_text: The text to decrypt.
-        :param password: The password to use for dencryption.
+        :param password: The password to use for decryption.
         :return: The decrypted text.
         """
         salt = cipher_text[:16]

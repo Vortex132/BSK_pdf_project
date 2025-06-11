@@ -1,0 +1,282 @@
+\doxysection{crypto.\+Signer Class Reference}
+\hypertarget{classcrypto_1_1_signer}{}\label{classcrypto_1_1_signer}\index{crypto.Signer@{crypto.Signer}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcrypto_1_1_signer_ae2082df51c64868c37edd8925acdb469}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, "{}Optional\mbox{[}rsa.\+RSAPrivate\+Key\mbox{]}"{} private\+\_\+key=None, "{}Optional\mbox{[}rsa.\+RSAPublic\+Key\mbox{]}"{} public\+\_\+key=None)
+\item 
+\mbox{\hyperlink{classcrypto_1_1_signer_a1135fc3a175a5287d9bc81bd3b82650c}{\+\_\+\+\_\+str\+\_\+\+\_\+}} (self)
+\item 
+bool \mbox{\hyperlink{classcrypto_1_1_signer_a1f0caec86e226b054620c54e3faa4a44}{can\+\_\+sign}} (self)
+\item 
+bytes \mbox{\hyperlink{classcrypto_1_1_signer_af33bf0f8f15e4aaa054b8194c361586e}{sign}} (self, "{}io.\+Buffered\+Reader \texorpdfstring{$\vert$}{|} str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]}"{} file)
+\item 
+\mbox{\hyperlink{classcrypto_1_1_signer_a71b42d936c906fd4fead199d8911f084}{easy\+\_\+sign}} (self, "{}str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]}"{} path)
+\item 
+bool \mbox{\hyperlink{classcrypto_1_1_signer_a702c012140cd7ca9040712a9fe4901ca}{easy\+\_\+verify}} (self, "{}str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]}"{} path)
+\item 
+bool \mbox{\hyperlink{classcrypto_1_1_signer_a384059be6d80cd5e75ce7fb02bbde985}{verify}} (self, "{}io.\+Buffered\+Reader \texorpdfstring{$\vert$}{|} str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]}"{} file, bytes sig)
+\item 
+None \mbox{\hyperlink{classcrypto_1_1_signer_ab9d41fed48d89fdedef61c2688878ed9}{to\+\_\+file}} (self, "{}io.\+Buffered\+Writer \texorpdfstring{$\vert$}{|} str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]}"{} key\+\_\+file, bytes password)
+\item 
+"{}Self"{} \mbox{\hyperlink{classcrypto_1_1_signer_ae9f27a287c54d0bc66c135ac094550c7}{from\+\_\+file}} (cls, "{}io.\+Buffered\+Reader \texorpdfstring{$\vert$}{|} str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]}"{} key\+\_\+file, bytes password)
+\item 
+None \mbox{\hyperlink{classcrypto_1_1_signer_aaaad61d63062d93f57f3c14a8210b278}{to\+\_\+file\+\_\+pub}} (self, "{}io.\+Buffered\+Writer \texorpdfstring{$\vert$}{|} str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]}"{} pub\+\_\+file)
+\item 
+"{}Self"{} \mbox{\hyperlink{classcrypto_1_1_signer_a2cfb7e0f3cdacf3d5cdc55aa5902c14b}{from\+\_\+file\+\_\+pub}} (cls, "{}io.\+Buffered\+Writer \texorpdfstring{$\vert$}{|} str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]}"{} pub\+\_\+file)
+\item 
+"{}Self"{} \mbox{\hyperlink{classcrypto_1_1_signer_a160b7ff34a6501d547b3235481a44ad7}{generate}} (cls, key\+\_\+size=4096)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classcrypto_1_1_signer_a545a9d145007de4c866d0d0041c10f97}\label{classcrypto_1_1_signer_a545a9d145007de4c866d0d0041c10f97} 
+{\bfseries private\+\_\+key} = private\+\_\+key
+\item 
+\Hypertarget{classcrypto_1_1_signer_a8bd9e487a0824e71102c9a219c8eb524}\label{classcrypto_1_1_signer_a8bd9e487a0824e71102c9a219c8eb524} 
+{\bfseries public\+\_\+key} = self.\+private\+\_\+key.\+public\+\_\+key()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+pbkdf2.\+PBKDF2\+HMAC \mbox{\hyperlink{classcrypto_1_1_signer_a47752f7165738761940aa42a782f14f9}{\+\_\+get\+\_\+kdf}} (cls, salt)
+\item 
+\mbox{\hyperlink{classcrypto_1_1_signer_a18b542b403aadaeeb0877793526cef24}{\+\_\+encrypt}} (cls, bytes plain\+\_\+text, bytes password)
+\item 
+\mbox{\hyperlink{classcrypto_1_1_signer_aed2133e6a68fd95a0a835e9f4acc84ef}{\+\_\+decrypt}} (cls, bytes cipher\+\_\+text, bytes password)
+\item 
+\mbox{\hyperlink{classcrypto_1_1_signer_aa30608b01afb0d955d2016d649770f78}{\+\_\+hash\+\_\+file}} (cls, hashes.\+Hash\+Algorithm hash, "{}io.\+Buffered\+Reader \texorpdfstring{$\vert$}{|} str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]}"{} file)
+\item 
+"{}Path"{} \mbox{\hyperlink{classcrypto_1_1_signer_a0ecbd61207f763502100631503ebccde}{\+\_\+sig\+\_\+path}} (cls, "{}str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]}"{} path)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Class to handle signing and verifying files using RSA keys.
+It uses private and public keys to sign and verify documents.
+The private key is used to sign the document, and the public key is used to verify the authenticity of signature.
+The class also allows to generate new keys and save them.
+\end{DoxyVerb}
+ 
+
+\label{doc-constructors}
+\Hypertarget{classcrypto_1_1_signer_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcrypto_1_1_signer_ae2082df51c64868c37edd8925acdb469}\index{crypto.Signer@{crypto.Signer}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!crypto.Signer@{crypto.Signer}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily \label{classcrypto_1_1_signer_ae2082df51c64868c37edd8925acdb469} 
+crypto.\+Signer.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{"{}Optional\mbox{[}rsa.\+RSAPrivate\+Key\mbox{]}"{}}]{private\+\_\+key}{ = {\ttfamily None}, }\item[{"{}Optional\mbox{[}rsa.\+RSAPublic\+Key\mbox{]}"{}}]{public\+\_\+key}{ = {\ttfamily None}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Initialize the Signer with a private key and a public key.
+If a private key is provided, the public key is derived from it.
+If only a public key is provided, it is used as is.
+
+:param private_key: The private key to use for signing.
+:param public_key: The public key to use for verifying the authenticity of signatures.
+\end{DoxyVerb}
+ 
+
+\label{doc-func-members}
+\Hypertarget{classcrypto_1_1_signer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcrypto_1_1_signer_a1135fc3a175a5287d9bc81bd3b82650c}\index{crypto.Signer@{crypto.Signer}!\_\_str\_\_@{\_\_str\_\_}}
+\index{\_\_str\_\_@{\_\_str\_\_}!crypto.Signer@{crypto.Signer}}
+\doxysubsubsection{\texorpdfstring{\_\_str\_\_()}{\_\_str\_\_()}}
+{\footnotesize\ttfamily \label{classcrypto_1_1_signer_a1135fc3a175a5287d9bc81bd3b82650c} 
+crypto.\+Signer.\+\_\+\+\_\+str\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Return the string representation of the Signer.
+Returns the public key in PEM format.
+\end{DoxyVerb}
+ \Hypertarget{classcrypto_1_1_signer_aed2133e6a68fd95a0a835e9f4acc84ef}\index{crypto.Signer@{crypto.Signer}!\_decrypt@{\_decrypt}}
+\index{\_decrypt@{\_decrypt}!crypto.Signer@{crypto.Signer}}
+\doxysubsubsection{\texorpdfstring{\_decrypt()}{\_decrypt()}}
+{\footnotesize\ttfamily \label{classcrypto_1_1_signer_aed2133e6a68fd95a0a835e9f4acc84ef} 
+crypto.\+Signer.\+\_\+decrypt (\begin{DoxyParamCaption}\item[{}]{cls}{, }\item[{bytes}]{cipher\+\_\+text}{, }\item[{bytes}]{password}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Decrypt the given cipher text using AES256 dencryption in CBC mode.
+The key is derived from the password using PBKDF2 KDF.
+The salt and iv is transformed from the cipher text.
+
+:param cipher_text: The text to decrypt.
+:param password: The password to use for dencryption.
+:return: The decrypted text.
+\end{DoxyVerb}
+ \Hypertarget{classcrypto_1_1_signer_a18b542b403aadaeeb0877793526cef24}\index{crypto.Signer@{crypto.Signer}!\_encrypt@{\_encrypt}}
+\index{\_encrypt@{\_encrypt}!crypto.Signer@{crypto.Signer}}
+\doxysubsubsection{\texorpdfstring{\_encrypt()}{\_encrypt()}}
+{\footnotesize\ttfamily \label{classcrypto_1_1_signer_a18b542b403aadaeeb0877793526cef24} 
+crypto.\+Signer.\+\_\+encrypt (\begin{DoxyParamCaption}\item[{}]{cls}{, }\item[{bytes}]{plain\+\_\+text}{, }\item[{bytes}]{password}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Encrypt the given plain text using AES256 encryption in CBC mode.
+The key is derived from the password using PBKDF2 KDF.
+The salt and iv is generated randomly.
+
+:param plain_text: The text to encrypt.
+:param password: The password to use for encryption.
+:return: The encrypted text.
+\end{DoxyVerb}
+ \Hypertarget{classcrypto_1_1_signer_a47752f7165738761940aa42a782f14f9}\index{crypto.Signer@{crypto.Signer}!\_get\_kdf@{\_get\_kdf}}
+\index{\_get\_kdf@{\_get\_kdf}!crypto.Signer@{crypto.Signer}}
+\doxysubsubsection{\texorpdfstring{\_get\_kdf()}{\_get\_kdf()}}
+{\footnotesize\ttfamily \label{classcrypto_1_1_signer_a47752f7165738761940aa42a782f14f9} 
+ pbkdf2.\+PBKDF2\+HMAC crypto.\+Signer.\+\_\+get\+\_\+kdf (\begin{DoxyParamCaption}\item[{}]{cls}{, }\item[{}]{salt}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Get the key derivation function (KDF) for the given salt.
+The KDF is used to get a key from the password.
+The KDF is PBKDF2 with SHA256 hash algorithm.
+The length of the key is set to 32 bytes.
+The number of iterations is set to 1,500,000.
+
+:param salt: The salt to use for the KDF.
+:return: The KDF.
+\end{DoxyVerb}
+ \Hypertarget{classcrypto_1_1_signer_aa30608b01afb0d955d2016d649770f78}\index{crypto.Signer@{crypto.Signer}!\_hash\_file@{\_hash\_file}}
+\index{\_hash\_file@{\_hash\_file}!crypto.Signer@{crypto.Signer}}
+\doxysubsubsection{\texorpdfstring{\_hash\_file()}{\_hash\_file()}}
+{\footnotesize\ttfamily \label{classcrypto_1_1_signer_aa30608b01afb0d955d2016d649770f78} 
+crypto.\+Signer.\+\_\+hash\+\_\+file (\begin{DoxyParamCaption}\item[{}]{cls}{, }\item[{hashes.\+Hash\+Algorithm}]{hash}{, }\item[{"{}io.\+Buffered\+Reader \texorpdfstring{$\vert$}{|} str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]}"{}}]{file}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Hash the given file using a given hash algorithm.
+The file is read in chunks and the hash is updated with each chunk.
+
+:param hash: The hash algorithm to use.
+:param file: The path to the file to hash.
+:return: The hash of the file.
+\end{DoxyVerb}
+ \Hypertarget{classcrypto_1_1_signer_a0ecbd61207f763502100631503ebccde}\index{crypto.Signer@{crypto.Signer}!\_sig\_path@{\_sig\_path}}
+\index{\_sig\_path@{\_sig\_path}!crypto.Signer@{crypto.Signer}}
+\doxysubsubsection{\texorpdfstring{\_sig\_path()}{\_sig\_path()}}
+{\footnotesize\ttfamily \label{classcrypto_1_1_signer_a0ecbd61207f763502100631503ebccde} 
+ "{}Path"{} crypto.\+Signer.\+\_\+sig\+\_\+path (\begin{DoxyParamCaption}\item[{}]{cls}{, }\item[{"{}str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]}"{}}]{path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Get the path to the signature file.
+
+:param path: The path to the original file.
+:return: The path to the signature file.
+\end{DoxyVerb}
+ \Hypertarget{classcrypto_1_1_signer_a1f0caec86e226b054620c54e3faa4a44}\index{crypto.Signer@{crypto.Signer}!can\_sign@{can\_sign}}
+\index{can\_sign@{can\_sign}!crypto.Signer@{crypto.Signer}}
+\doxysubsubsection{\texorpdfstring{can\_sign()}{can\_sign()}}
+{\footnotesize\ttfamily \label{classcrypto_1_1_signer_a1f0caec86e226b054620c54e3faa4a44} 
+ bool crypto.\+Signer.\+can\+\_\+sign (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Check if Signer can sign files.
+Is true if a private key is available.
+\end{DoxyVerb}
+ \Hypertarget{classcrypto_1_1_signer_a71b42d936c906fd4fead199d8911f084}\index{crypto.Signer@{crypto.Signer}!easy\_sign@{easy\_sign}}
+\index{easy\_sign@{easy\_sign}!crypto.Signer@{crypto.Signer}}
+\doxysubsubsection{\texorpdfstring{easy\_sign()}{easy\_sign()}}
+{\footnotesize\ttfamily \label{classcrypto_1_1_signer_a71b42d936c906fd4fead199d8911f084} 
+crypto.\+Signer.\+easy\+\_\+sign (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{"{}str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]}"{}}]{path}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Sign a file using the private key (if available).
+The signature is saved in a file with the same name as the original file.
+
+:param path: The path to the file to sign.
+\end{DoxyVerb}
+ \Hypertarget{classcrypto_1_1_signer_a702c012140cd7ca9040712a9fe4901ca}\index{crypto.Signer@{crypto.Signer}!easy\_verify@{easy\_verify}}
+\index{easy\_verify@{easy\_verify}!crypto.Signer@{crypto.Signer}}
+\doxysubsubsection{\texorpdfstring{easy\_verify()}{easy\_verify()}}
+{\footnotesize\ttfamily \label{classcrypto_1_1_signer_a702c012140cd7ca9040712a9fe4901ca} 
+ bool crypto.\+Signer.\+easy\+\_\+verify (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{"{}str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]}"{}}]{path}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Verify a file using the public key (if available).
+The signature is read from a file with the same name as the original file.
+
+:param path: The path to the file to verify the authenticity.
+:return: True if signature is valid, False if not.
+\end{DoxyVerb}
+ \Hypertarget{classcrypto_1_1_signer_ae9f27a287c54d0bc66c135ac094550c7}\index{crypto.Signer@{crypto.Signer}!from\_file@{from\_file}}
+\index{from\_file@{from\_file}!crypto.Signer@{crypto.Signer}}
+\doxysubsubsection{\texorpdfstring{from\_file()}{from\_file()}}
+{\footnotesize\ttfamily \label{classcrypto_1_1_signer_ae9f27a287c54d0bc66c135ac094550c7} 
+ "{}Self"{} crypto.\+Signer.\+from\+\_\+file (\begin{DoxyParamCaption}\item[{}]{cls}{, }\item[{"{}io.\+Buffered\+Reader \texorpdfstring{$\vert$}{|} str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]}"{}}]{key\+\_\+file}{, }\item[{bytes}]{password}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Deserialize the private key from a given file.
+The private key is decrypted using a password.
+The file is read in PEM format.
+
+:param key_file: The path to the file to read the private key.
+:param password: The password to the private key.
+\end{DoxyVerb}
+ \Hypertarget{classcrypto_1_1_signer_a2cfb7e0f3cdacf3d5cdc55aa5902c14b}\index{crypto.Signer@{crypto.Signer}!from\_file\_pub@{from\_file\_pub}}
+\index{from\_file\_pub@{from\_file\_pub}!crypto.Signer@{crypto.Signer}}
+\doxysubsubsection{\texorpdfstring{from\_file\_pub()}{from\_file\_pub()}}
+{\footnotesize\ttfamily \label{classcrypto_1_1_signer_a2cfb7e0f3cdacf3d5cdc55aa5902c14b} 
+ "{}Self"{} crypto.\+Signer.\+from\+\_\+file\+\_\+pub (\begin{DoxyParamCaption}\item[{}]{cls}{, }\item[{"{}io.\+Buffered\+Writer \texorpdfstring{$\vert$}{|} str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]}"{}}]{pub\+\_\+file}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Deserialize the public key from a given file.
+The file is read in OpenSSH format.
+
+:param pub_file: The path to the file to read the public key.
+:return: The public key.
+\end{DoxyVerb}
+ \Hypertarget{classcrypto_1_1_signer_a160b7ff34a6501d547b3235481a44ad7}\index{crypto.Signer@{crypto.Signer}!generate@{generate}}
+\index{generate@{generate}!crypto.Signer@{crypto.Signer}}
+\doxysubsubsection{\texorpdfstring{generate()}{generate()}}
+{\footnotesize\ttfamily \label{classcrypto_1_1_signer_a160b7ff34a6501d547b3235481a44ad7} 
+ "{}Self"{} crypto.\+Signer.\+generate (\begin{DoxyParamCaption}\item[{}]{cls}{, }\item[{}]{key\+\_\+size}{ = {\ttfamily 4096}}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Generate a new RSA key.
+The private key is used for signing.
+The key size is set to 4096 bits.
+
+:param key_size: The size of the key to generate.
+:return: The generated RSA key.
+\end{DoxyVerb}
+ \Hypertarget{classcrypto_1_1_signer_af33bf0f8f15e4aaa054b8194c361586e}\index{crypto.Signer@{crypto.Signer}!sign@{sign}}
+\index{sign@{sign}!crypto.Signer@{crypto.Signer}}
+\doxysubsubsection{\texorpdfstring{sign()}{sign()}}
+{\footnotesize\ttfamily \label{classcrypto_1_1_signer_af33bf0f8f15e4aaa054b8194c361586e} 
+ bytes crypto.\+Signer.\+sign (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{"{}io.\+Buffered\+Reader \texorpdfstring{$\vert$}{|} str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]}"{}}]{file}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Sign a file using the private key (if available).
+The file is hashed using SHA256 hash and then signed using PSS padding.
+
+:param file: The path to the file to sign.
+:return: The signature of the file.
+\end{DoxyVerb}
+ \Hypertarget{classcrypto_1_1_signer_ab9d41fed48d89fdedef61c2688878ed9}\index{crypto.Signer@{crypto.Signer}!to\_file@{to\_file}}
+\index{to\_file@{to\_file}!crypto.Signer@{crypto.Signer}}
+\doxysubsubsection{\texorpdfstring{to\_file()}{to\_file()}}
+{\footnotesize\ttfamily \label{classcrypto_1_1_signer_ab9d41fed48d89fdedef61c2688878ed9} 
+ None crypto.\+Signer.\+to\+\_\+file (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{"{}io.\+Buffered\+Writer \texorpdfstring{$\vert$}{|} str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]}"{}}]{key\+\_\+file}{, }\item[{bytes}]{password}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Serialize the private key to a given file.
+The private key is encrypted using a password.
+The file is saved in PEM format.
+
+:param key_file: The path to the file to save the private key.
+:param password: The password to encrypt the private key.
+\end{DoxyVerb}
+ \Hypertarget{classcrypto_1_1_signer_aaaad61d63062d93f57f3c14a8210b278}\index{crypto.Signer@{crypto.Signer}!to\_file\_pub@{to\_file\_pub}}
+\index{to\_file\_pub@{to\_file\_pub}!crypto.Signer@{crypto.Signer}}
+\doxysubsubsection{\texorpdfstring{to\_file\_pub()}{to\_file\_pub()}}
+{\footnotesize\ttfamily \label{classcrypto_1_1_signer_aaaad61d63062d93f57f3c14a8210b278} 
+ None crypto.\+Signer.\+to\+\_\+file\+\_\+pub (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{"{}io.\+Buffered\+Writer \texorpdfstring{$\vert$}{|} str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]}"{}}]{pub\+\_\+file}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Serialize the public key to a given file.
+The file is saved in OpenSSH format.
+
+:param pub_file: The path to the file to save the public key.
+\end{DoxyVerb}
+ \Hypertarget{classcrypto_1_1_signer_a384059be6d80cd5e75ce7fb02bbde985}\index{crypto.Signer@{crypto.Signer}!verify@{verify}}
+\index{verify@{verify}!crypto.Signer@{crypto.Signer}}
+\doxysubsubsection{\texorpdfstring{verify()}{verify()}}
+{\footnotesize\ttfamily \label{classcrypto_1_1_signer_a384059be6d80cd5e75ce7fb02bbde985} 
+ bool crypto.\+Signer.\+verify (\begin{DoxyParamCaption}\item[{}]{self}{, }\item[{"{}io.\+Buffered\+Reader \texorpdfstring{$\vert$}{|} str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]}"{}}]{file}{, }\item[{bytes}]{sig}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Verify a file using the public key (if available).
+The file is hashed using SHA256 hash and then verified using PSS padding.
+
+:param file: The path to the file to verify the authenticity.
+:param sig: The signature of the file.
+:return: True if signature is valid, False if not.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+bskpdf/crypto.\+py\end{DoxyCompactItemize}

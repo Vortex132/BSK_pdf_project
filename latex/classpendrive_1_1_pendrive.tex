@@ -1,0 +1,73 @@
+\doxysection{pendrive.\+Pendrive Class Reference}
+\hypertarget{classpendrive_1_1_pendrive}{}\label{classpendrive_1_1_pendrive}\index{pendrive.Pendrive@{pendrive.Pendrive}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classpendrive_1_1_pendrive_ab0c9d7d71b0181b9929b5b92df058905}\label{classpendrive_1_1_pendrive_ab0c9d7d71b0181b9929b5b92df058905} 
+{\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, "{}str \texorpdfstring{$\vert$}{|} os.\+Path\+Like\mbox{[}str\mbox{]}"{} path)
+\item 
+\mbox{\hyperlink{classpendrive_1_1_pendrive_ae5d2120a2ff1dbe0b0c610fca88b1da5}{run}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classpendrive_1_1_pendrive_a4cecba9c0a863eb012288ddaacf85f05}\label{classpendrive_1_1_pendrive_a4cecba9c0a863eb012288ddaacf85f05} 
+{\bfseries path} = path
+\item 
+\Hypertarget{classpendrive_1_1_pendrive_a5e6b00c379095d84f8779727ceb730b2}\label{classpendrive_1_1_pendrive_a5e6b00c379095d84f8779727ceb730b2} 
+None\texorpdfstring{$\vert$}{|}Callable\mbox{[}\mbox{[}str\mbox{]}, None\mbox{]} {\bfseries attach} = None
+\item 
+\Hypertarget{classpendrive_1_1_pendrive_a7c7c66edae4beaf382fb05bf83a4e194}\label{classpendrive_1_1_pendrive_a7c7c66edae4beaf382fb05bf83a4e194} 
+None\texorpdfstring{$\vert$}{|}Callable\mbox{[}\mbox{[}str\mbox{]}, None\mbox{]} {\bfseries detach} = None
+\item 
+\Hypertarget{classpendrive_1_1_pendrive_ab0a64c7bf7e88cff9dd044ab9254a54c}\label{classpendrive_1_1_pendrive_ab0a64c7bf7e88cff9dd044ab9254a54c} 
+bool {\bfseries attached} = False
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classpendrive_1_1_pendrive_a4c6595080338b46ca617bb5543312daf}{\+\_\+checker\+\_\+task}} (self)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classpendrive_1_1_pendrive_a40c546149bb9b9ef2f057c05051f43e0}\label{classpendrive_1_1_pendrive_a40c546149bb9b9ef2f057c05051f43e0} 
+{\bfseries \+\_\+thread} = threading.\+Thread(target=self.\+\_\+checker\+\_\+task, daemon=True)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Monitor the connection status of a pendrive at a specified path.
+Callback functions can be set to handle attach and detach events.
+
+:param path: The filesystem path to monitor for the pendrive.
+\end{DoxyVerb}
+ 
+
+\label{doc-func-members}
+\Hypertarget{classpendrive_1_1_pendrive_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classpendrive_1_1_pendrive_a4c6595080338b46ca617bb5543312daf}\index{pendrive.Pendrive@{pendrive.Pendrive}!\_checker\_task@{\_checker\_task}}
+\index{\_checker\_task@{\_checker\_task}!pendrive.Pendrive@{pendrive.Pendrive}}
+\doxysubsubsection{\texorpdfstring{\_checker\_task()}{\_checker\_task()}}
+{\footnotesize\ttfamily \label{classpendrive_1_1_pendrive_a4c6595080338b46ca617bb5543312daf} 
+pendrive.\+Pendrive.\+\_\+checker\+\_\+task (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyVerb}Periodically check for the presence of the pendrive.
+Invokes attach or detach callbacks based on connection status.
+Intended to run in a background thread.
+\end{DoxyVerb}
+ \Hypertarget{classpendrive_1_1_pendrive_ae5d2120a2ff1dbe0b0c610fca88b1da5}\index{pendrive.Pendrive@{pendrive.Pendrive}!run@{run}}
+\index{run@{run}!pendrive.Pendrive@{pendrive.Pendrive}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily \label{classpendrive_1_1_pendrive_ae5d2120a2ff1dbe0b0c610fca88b1da5} 
+pendrive.\+Pendrive.\+run (\begin{DoxyParamCaption}\item[{}]{self}{}\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Start the background thread that monitors the pendrive status.
+This method returns immediately.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+bskpdf/pendrive.\+py\end{DoxyCompactItemize}

@@ -1,0 +1,6 @@
+Metadata-Version: 2.4
+Name: bskpdf
+Version: 0.0.1
+Requires-Python: >=3.11
+Requires-Dist: cryptography>=44.0.2
+Requires-Dist: dearpygui>=2.0.0

@@ -1,0 +1,13 @@
+.gitignore
+Doxyfile
+pyproject.toml
+uv.lock
+bskpdf/crypto.py
+bskpdf/gui.py
+bskpdf/pendrive.py
+bskpdf.egg-info/PKG-INFO
+bskpdf.egg-info/SOURCES.txt
+bskpdf.egg-info/dependency_links.txt
+bskpdf.egg-info/entry_points.txt
+bskpdf.egg-info/requires.txt
+bskpdf.egg-info/top_level.txt
